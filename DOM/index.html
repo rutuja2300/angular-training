@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        arr=[]
+        //  name="Rutuja"
+        function draw() {
+        main=document.getElementById('main');
+        main.innerHTML="<h1>Hello "+name+"  </h1>"
+        }
+        function demo() {
+            var nameField= document.getElementById('name');
+            nameField.value=name;
+            draw();
+        }
+        function nameChanged() {
+            var nameField= document.getElementById('name');
+            name=nameField.value;
+            draw();
+        }
+        function add() {
+            name=nameField.value;
+            arr.push(name);
+            draw();
+        }
+        
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="demo()">
+    <input type="text" name="fname" id="name" onchange="nameChanged()"/>
+    <!-- <input type="text" name="lname" id="name" onchange="nameChanged()"/> -->
+    <button onclick="add">Add</button>
+    <p id="main">
+</p>
+
+</body>
+</html>

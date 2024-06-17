@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="arr">
+    </p>
+    <script>
+        arr=["Rutuja","Pooja","Akash","Tejal"]
+        main=document.getElementById('arr');
+        htmlString="<ul>"
+        for (let i=0;i<arr.length;i++) {
+            htmlString+="<li>"+arr[i]+"</li>"
+        }
+        htmlString+="</ul>"
+        main.innerHTML=htmlString;
+    </script>
+</body>
+</html>

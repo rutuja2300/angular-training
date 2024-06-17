@@ -1,0 +1,210 @@
+<!-- List -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .remove-btn {
+            margin-left: 10px;
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Binding</h1>
+    <div>
+        <input type="text" id="fname" placeholder="First Name">
+        <input type="text" id="lname" placeholder="Last Name">
+        <button id="addBtn">Add to List</button>
+    </div>
+    <ul id="namesList"></ul>
+
+    <script>
+        document.getElementById('addBtn').addEventListener('click', function() {
+            const fname = document.getElementById('fname').value;
+            const lname = document.getElementById('lname').value;
+
+            if (fname && lname) {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${fname} ${lname}`;
+
+                const removeBtn = document.createElement('span');
+                removeBtn.textContent = 'Remove';
+                removeBtn.classList.add('remove-btn');
+                removeBtn.addEventListener('click', function() {
+                    listItem.remove();
+                });
+
+                listItem.appendChild(removeBtn);
+                document.getElementById('namesList').appendChild(listItem);
+
+                document.getElementById('fname').value = '';
+                document.getElementById('lname').value = '';
+            } else {
+                alert('Please enter both first name and last name.');
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- Table -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .remove-btn {
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Binding</h1>
+    <div>
+        <input type="text" id="fname" placeholder="First Name">
+        <input type="text" id="lname" placeholder="Last Name">
+        <button id="addBtn">Add to List</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="namesTable"></tbody>
+    </table>
+
+    <script>
+        document.getElementById('addBtn').addEventListener('click', function() {
+            const fname = document.getElementById('fname').value;
+            const lname = document.getElementById('lname').value;
+
+            if (fname && lname) {
+                const tableBody = document.getElementById('namesTable');
+                const row = document.createElement('tr');
+
+                const fnameCell = document.createElement('td');
+                fnameCell.textContent = fname;
+
+                const lnameCell = document.createElement('td');
+                lnameCell.textContent = lname;
+
+                const actionCell = document.createElement('td');
+                const removeBtn = document.createElement('span');
+                removeBtn.textContent = 'Remove';
+                removeBtn.classList.add('remove-btn');
+                removeBtn.addEventListener('click', function() {
+                    row.remove();
+                });
+                actionCell.appendChild(removeBtn);
+
+                row.appendChild(fnameCell);
+                row.appendChild(lnameCell);
+                row.appendChild(actionCell);
+                tableBody.appendChild(row);
+
+                document.getElementById('fname').value = '';
+                document.getElementById('lname').value = '';
+            } else {
+                alert('Please enter both first name and last name.');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- HW
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" oninput="updateOutput()">
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" oninput="updateOutput()">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" oninput="updateOutput()">
+        </div>
+        <div class="form-group">
+            <label for="about">About Yourself:</label>
+            <textarea id="about" oninput="updateOutput()"></textarea>
+        </div>
+        <div class="output" id="output">
+            <h2>Output:</h2>
+            <p id="outputName"></p>
+            <p id="outputMobile"></p>
+            <p id="outputEmail"></p>
+            <p id="outputAbout"></p>
+        </div>
+    </div>
+
+    <script>
+        function updateOutput() {
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const email = document.getElementById('email').value;
+            const about = document.getElementById('about').value;
+
+            document.getElementById('outputName').innerText = 'Name: ' + name;
+            document.getElementById('outputMobile').innerText = 'Mobile Number: ' + mobile;
+            document.getElementById('outputEmail').innerText = 'Email: ' + email;
+            document.getElementById('outputAbout').innerText = 'About Yourself: ' + about;
+        }
+    </script>
+</body>
+</html> -->

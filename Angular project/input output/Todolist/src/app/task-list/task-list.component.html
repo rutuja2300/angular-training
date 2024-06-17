@@ -1,0 +1,4 @@
+<app-add-task (onAdd) = "addTask($event)"></app-add-task>
+@for (taskItem of tasks; track taskItem.id) {
+<app-task [taskItem]="taskItem" (onRemove)="onRemove($event)"></app-task>
+}
