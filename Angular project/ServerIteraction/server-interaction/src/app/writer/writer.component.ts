@@ -10,16 +10,19 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './writer.component.css'
 })
 export class WriterComponent {
-  missions:string[] | undefined;
-  newMission:string="" 
+  
+  
+  id: any;
+  name: any;
   constructor(private  fisrtService:FirstServiceService){}
   ngOnInit(){
    
   }
   addNewMission(){
-    this.fisrtService.addMission(this.newMission);
-    
-    this.newMission="";
+ let data={id:this.id , name:this.name}
+ this.fisrtService.addMission(data).subscribe(()=>{
+  console.log("Mission added");
+ })
   }
  
 }

@@ -1,6 +1,7 @@
 <ul>
-  @for (mission of missions; track $index) {
-  <li>{{ mission.id }} - {{ mission.name }}</li>
+  @for (mission of missions; track mission.id) {
+  <li>{{ mission.id }} - {{ mission.name }}<button (click)="removeNewMission(mission.id)">Remove</button >
+  </li>
   }
 </ul>
 <!-- <button (click)="removeNewMission($index)">Remove</button -->
