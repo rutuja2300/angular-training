@@ -1,0 +1,14 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "name": "Rutuja",
+      "price":"1000"
+    },
+    {
+      "id": "2",
+      "name": "Atharva",
+      "price":"2000"
+    }
+  ]
+}
